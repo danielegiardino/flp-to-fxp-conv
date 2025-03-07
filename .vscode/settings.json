@@ -3,6 +3,8 @@
     "files.associations": {
         "lib_fun.h": "c",
         "lib_config.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "math.h": "c",
+        "functional": "c"
     }
 }

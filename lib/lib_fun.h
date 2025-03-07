@@ -2,6 +2,7 @@
 #define LIB_FUN_H
 
 #include <stdint.h>
+#include <stdio.h>    // Standard input/output library.
 
 // Function prototype: Converts a floating-point number to a fixed-point representation.
 // Parameters:

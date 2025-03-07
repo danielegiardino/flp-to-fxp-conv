@@ -1,5 +1,4 @@
 // main.c
-#include <stdio.h>    // Standard input/output library.
 #include <stdint.h>   // Standard integer types library.
 #include <stdlib.h>   // Standard library functions (e.g., atoi, atof).
 #include <math.h>     // Math library (e.g., pow, roundf).
@@ -55,8 +54,8 @@ int main(int argc, char const *argv[]) {
         printf("%li", b); // Print the extracted bit.
 
         // Insert a comma between the integer and fractional parts.
-        if (i == (Fl - 1) && Fl != 0 && Wl > Fl) {
-            printf(",");
+        if (i == (Wl - Fl - 1) && Fl != 0 && Wl > Fl) {
+            printf(".");
         }
     }
     printf("\n");
