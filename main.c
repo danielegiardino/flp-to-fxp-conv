@@ -70,7 +70,7 @@ int main(int argc, char const *argv[]) {
             printf(".");
         }
     }
-    printf("\n");
+    printf("  <---- It's the result :)\n");
 
     // Print a separator line.
     printf("----------------------------------------------------------------\n");
