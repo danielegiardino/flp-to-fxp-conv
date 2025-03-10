@@ -32,7 +32,9 @@ void flp_to_fxp(float x, uint8_t Wl, uint8_t Fl, uint8_t y[])
   }
 
   // Scaling
+  printf("x=%f\n",x);
   x = x * powf(2,Fl);
+  printf("x=%f\n",x);
   if (x>0)
     x = roundf(x);
   else
@@ -41,19 +43,21 @@ void flp_to_fxp(float x, uint8_t Wl, uint8_t Fl, uint8_t y[])
     x = roundf(x);
     x = -x;
   }
+  printf("x=%f\n",x);
 
   // Binary conversion for the integer part.
   for (size_t i = 0; i < Wl; i++)
   {
     float x_rem = fmod(x, 2); // Get the remainder when divided by 2.
+
     if (fabs(x_rem) == 1.0)
       y[i] = 1; // Set the bit to 1 if the remainder is 1.
     else
       y[i] = 0; // Set the bit to 0 if the remainder is 0.
 
-    // if (i>=Fl)
     y[i] = (x < 0) ? (y[i] ^ 1) : y[i]; // Apply two's complement if negative.
-    x /= 2; // Divide by 2 for the next bit.
+    x /= 2;       // Divide by 2 for the next bit.
+    x = floor(x); // Round down to the nearest integer.
   }
 
 }
