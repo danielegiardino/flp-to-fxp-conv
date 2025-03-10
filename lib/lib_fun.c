@@ -32,9 +32,7 @@ void flp_to_fxp(float x, uint8_t Wl, uint8_t Fl, uint8_t y[])
   }
 
   // Scaling
-  printf("x=%f\n",x);
   x = x * powf(2,Fl);
-  printf("x=%f\n",x);
   if (x>0)
     x = roundf(x);
   else
@@ -43,7 +41,6 @@ void flp_to_fxp(float x, uint8_t Wl, uint8_t Fl, uint8_t y[])
     x = roundf(x);
     x = -x;
   }
-  printf("x=%f\n",x);
 
   // Binary conversion for the integer part.
   for (size_t i = 0; i < Wl; i++)
