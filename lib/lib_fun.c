@@ -6,8 +6,8 @@
 void flp_to_fxp(float x, uint8_t Wl, uint8_t Fl, uint8_t y[])
 {
 
-  float x_max = +pow(2, Wl-Fl - 1) - 1 - pow(2, -Fl); // Max value: Calculate the maximum representable value.
-  float x_min = -pow(2, Wl-Fl - 1) + pow(2, -Fl);    // Min value: Calculate the minimum representable value.
+  float x_max = +powf(2, Wl-Fl - 1) - 1 - powf(2, -Fl); // Max value: Calculate the maximum representable value.
+  float x_min = -powf(2, Wl-Fl - 1) + powf(2, -Fl);    // Min value: Calculate the minimum representable value.
 
   // Saturation logic: Handle values outside the representable range.
   if (x >= x_max)
@@ -46,7 +46,7 @@ void flp_to_fxp(float x, uint8_t Wl, uint8_t Fl, uint8_t y[])
   for (size_t i = 0; i < Wl; i++)
   {
     float x_rem = fmod(x, 2); // Get the remainder when divided by 2.
-    if (abs(x_rem) == 1.0)
+    if (fabs(x_rem) == 1.0)
       y[i] = 1; // Set the bit to 1 if the remainder is 1.
     else
       y[i] = 0; // Set the bit to 0 if the remainder is 0.
