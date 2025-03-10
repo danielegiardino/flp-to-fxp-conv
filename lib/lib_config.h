@@ -7,7 +7,7 @@
 
 // Structure to hold configuration parameters.
 typedef struct {
-    float x;
+    double x;
     size_t Wl;
     size_t Fl;
     int help; // Added help flag

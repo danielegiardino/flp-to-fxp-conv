@@ -17,7 +17,7 @@ int main(int argc, char const *argv[]) {
     }
 
     // Extract configuration parameters from the parsed configuration.
-    float x = config.x; // Floating-point number to convert.
+    double x = config.x; // Floating-point number to convert.
     size_t Wl = config.Wl; // Word length (total number of bits).
     size_t Fl = config.Fl; // Fractional length (number of bits for fractional part).
 
@@ -44,7 +44,7 @@ int main(int argc, char const *argv[]) {
     flp_to_fxp(x, Wl, Fl, y);
 
     // Reference calculation: Calculate the expected fixed-point value for comparison.
-    int64_t r = roundf(x * pow(2, Fl));
+    int64_t r = round(x * pow(2, Fl));
 
     // Print the reference fixed-point representation.
     printf("Reference:  ");
