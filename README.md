@@ -1,6 +1,6 @@
-# Floating-Point to Fixed-Point Converter (flp_to_fxp_conv)
+# Floating-Point to Fixed-Point Converter (flp-to-fxp-conv)
 
-This repository contains a C program that converts floating-point numbers to fixed-point representations. It provides a flexible way to specify the word length and fractional length of the fixed-point output.
+This repository contains a C program that converts floating-point numbers (doubles) to fixed-point representations, outputting the result as a string of bits. It provides a flexible way to specify the word length and fractional length of the fixed-point output. The program performs a comparison between two conversion methods: a direct approach involving scaling the double value, rounding it, and generating the binary string, and a custom conversion implemented through a dedicated C function.
 
 ## Overview
 
@@ -33,7 +33,7 @@ Fixed-point arithmetic is often used in embedded systems and digital signal proc
 
 ### Compilation
 
-1.**Clone the repository:**
+1. **Clone the repository:**
 
 ```bash
 git clone [repository_url]
@@ -69,7 +69,7 @@ make
 
 -  `./flp_to_fxp_conv`: Runs the program with default values (`x = 17.5652156`, `Wl = 16`, `Fl = 8`).
 -  `./flp_to_fxp_conv <x>`: Runs the program with the specified floating-point number `x` and default `Wl` and `Fl`.
--  `./flp_to_fxp_conv <Wl> <Fl> <x>`: Runs the program with the specified word length `Wl`, fractional length `Fl`, and floating-point number `x`.
+-  `./flp_to_fxp_conv <Wl> <Fl> <x>`: Runs the program with the specified word length `Wl`, fractional length `Fl`, and floating-point number `x` (in that order).
 -  `./flp_to_fxp_conv -h` or `./flp_to_fxp_conv --help`: Displays the help message.
 
 ### Example

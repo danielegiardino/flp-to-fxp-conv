@@ -6,7 +6,7 @@
 void flp_to_fxp(double x, uint8_t Wl, uint8_t Fl, uint8_t y[])
 {
 
-  double x_max = +pow(2, Wl-Fl - 1) - 1 - pow(2, -Fl); // Max value: Calculate the maximum representable value.
+  double x_max = +pow(2, Wl-Fl - 1) - pow(2, -Fl); // Max value: Calculate the maximum representable value.
   double x_min = -pow(2, Wl-Fl - 1) + pow(2, -Fl);    // Min value: Calculate the minimum representable value.
 
   // Saturation logic: Handle values outside the representable range.
